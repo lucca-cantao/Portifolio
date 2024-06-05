@@ -7,8 +7,10 @@
 body {
   width: 100%;
   height: 100vh;
-  background-image: url(./img/7871.jpg);
+  background-image: url(https://img.freepik.com/vetores-gratis/ceu-noturno-com-estrelas_1048-7871.jpg);
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
   background-color: black;
 }
 li {
@@ -25,7 +27,7 @@ a,
   color: white;
 }
 .botao {
-  margin-left: 250px;
+  margin-left: 170px;
   padding-top: 5px;
   display: flex;
 }
@@ -80,7 +82,7 @@ a,
 }
 .footer {
   background-color: #b60000;
-  height: 80px;
+  height: 40px;
   width: 100%;
   bottom: 0px;
   margin-bottom: 0px;
@@ -128,11 +130,62 @@ a,
 }
 .spanDigitar {
   overflow: hidden;
-  border-right: 0.15em solid #b60000;
   white-space: nowrap;
   font-size: 1.6rem;
   width: 0;
 }
 .containerType {
   display: inline-block;
+}
+.containerType span {
+  position: relative;
+}
+.containerType span::before {
+  content: "Web Developer";
+  animation: words 20s infinite;
+}
+.containerType span::after {
+  content: "";
+  position: absolute;
+  width: calc(100%+8px);
+  height: 100%;
+  background-color: black;
+  border-left: 2px solid #b60000;
+  right: -8px;
+  animation: cursor 0.8s infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor {
+  to {
+    border-left: 2px solid black;
+  }
+}
+@keyframes words {
+  0%,
+  20% {
+    content: "Web developer";
+  }
+  21%,
+  40% {
+    content: "Programador";
+  }
+41%,
+  60% {
+    content: "Gamer";
+  }
+  61%,
+  80% {
+    content: "Designer";
+  }
+  81%,
+  100% {
+    content: "Estudante";
+  }
+}
+@keyframes typing {
+  10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+    width: 0;
+  }
+  5%,20%,25%,40%,45%,60%,65%,80%,85%{
+    width: calc(100% + 8px);
+  }
 }
